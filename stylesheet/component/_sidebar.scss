@@ -1,0 +1,77 @@
+$sidebar-width: 280px;
+
+.sidebar{
+    width: $sidebar-width;
+    margin-left: -$sidebar-width;
+    transition: margin-left .25s;
+    position: fixed;
+    top: 0;
+
+    // 登出樣式
+    .sidebar-link{
+        display: block;
+        color: black;
+        text-decoration: none;
+        padding-top: .875rem;
+        padding-bottom: .875rem;
+        &:hover{
+            background: rgba($color: $primary, $alpha: 0.16);
+        }
+    }
+    .sidebar-link.active{
+        position: relative;
+        color: $primary;
+        background: rgba($color: $primary, $alpha: 0.16);
+        &::after{
+            content: "";
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            background: $primary;
+            top: 0;
+            left: 2px;
+        }
+    }
+}
+
+.main{
+    width: 100%;
+    margin-left: 0;
+    transition: margin-left .25s;
+}
+
+// 展開 sidebar
+.sidebar-toggled{
+    .sidebar{
+        margin-left: 0;
+        transition: margin-left .25s;
+    }
+    .main{
+        margin-left: $sidebar-width;
+        transition: margin-left .25s;
+    }
+}
+
+@include media-breakpoint-up(lg){
+    .sidebar{
+        margin-left: 0;
+        width: $sidebar-width;
+    }
+    
+    .main{
+        width: calc(100vw - #{$sidebar-width});
+        margin-left: $sidebar-width;
+        transition: margin-left .25s;
+    }
+
+    // 展開
+    .sidebar-toggled{
+        .sidebar{
+            margin-left: -$sidebar-width;
+        }
+        .main{
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}
