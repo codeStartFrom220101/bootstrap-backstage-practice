@@ -9,7 +9,7 @@
   <title>後台網站</title>
 </head>
 
-<body class="vsc-initailized">
+<body data-bs-spy="scroll" data-bs-target="#list-title" data-bs-offset="80">
   <div class="d-flex">
     <aside class="sidebar vh-100 d-flex flex-column bg-white border-end">
       <div class="px-4 py-3">
@@ -80,29 +80,242 @@
       <div class="p-4">
         <div class="row">
           <div class="col-lg-3 mb-3">
-            <div class="list-group sticky-top" style="top: 80px;">
-              <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+            <nav id="list-title" class="list-group sticky-top" style="top: 80px;">
+              <a href="#card-summary" class="list-group-item list-group-item-action">
                 摘要
               </a>
-              <a href="#" class="list-group-item list-group-item-action">購買品項</a>
-              <a href="#" class="list-group-item list-group-item-action">發票管理</a>
-              <a href="#" class="list-group-item list-group-item-action">危險操作</a>
-            </div>
+              <a href="#card-detail" class="list-group-item list-group-item-action">購買品項</a>
+              <a href="#card-invoice" class="list-group-item list-group-item-action">發票管理</a>
+              <a href="#card-danger" class="list-group-item list-group-item-action">危險操作</a>
+            </nav>
           </div>
           <div class="col-lg-9">
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-          </div>
-        </div>
+            <div class="card mb-3" id="card-summary">
+              <div class="card-header">
+                摘要
+              </div>
+              <div class="card-body">
+                <dl class="row mb-0">
+                  <dt class="col-sm-3 text-truncate">訂單編號</dt>
+                  <dd class="col-sm-9">TX123456789</dd>
 
+                  <dt class="col-sm-3 text-truncate">訂單金額</dt>
+                  <dd class="col-sm-9">800</dd>
+
+                  <dt class="col-sm-3 text-truncate">訂單狀態</dt>
+                  <dd class="col-sm-9">待處理</dd>
+
+                  <dt class="col-sm-3 text-truncate">發票狀態</dt>
+                  <dd class="col-sm-9">未開立</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="card mb-3" id="card-detail">
+              <div class="card-header">
+                購買品項
+              </div>
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table table-hover mb-0">
+                    <thead class="bg-light text-nowrap">
+                      <tr class="align-middle">
+                        <th scope="col class=" ps-4"></th>
+                        <th scope="col" class="py-3 text-end">訂單編號</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">用戶姓名</th>
+                        <th scope="col">購買品項</th>
+                        <th scope="col">付款狀態</th>
+                        <th scope="col" class="text-end">購買金額</th>
+                        <th scope="col" class="pe-4 text-end">編輯</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="text-nowrap">
+                      <tr class="align-middle">
+                        <td class="ps-4"><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value=""
+                            aria-label="..."></td>
+                        <td class="text-end">TX123456788</td>
+                        <td>freediving@gmail.com</td>
+                        <td>賴咚咚</td>
+                        <td>全家餐</td>
+                        <td class="text-muted">尚未付款</td>
+                        <td class="text-end">666</td>
+                        <td class="pe-4 text-end">
+                          <div class="btn-group">
+                            <a href="#" class="btn btn-outline-dark btn-sm">
+                              編輯<i class="ms-1 bi bi-pen"></i>
+                            </a>
+                            <div class="btn-group">
+                              <a class="btn btn-outline-dark btn-sm dropdown-toggle" href="#" role="button"
+                                id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                更多
+                              </a>
+
+                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">修改狀態</a></li>
+                                <li><a class="dropdown-item text-danger" href="#deleteModal" data-bs-toggle="modal"
+                                    data-bs-order-id="TX123456788">刪除訂單</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="align-middle">
+                        <td class="ps-4 td-border-bottom-0"><input class="form-check-input" type="checkbox"
+                            id="checkboxNoLabel" value="" aria-label="..."></td>
+                        <td class="text-end td-border-bottom-0">TX123456788</td>
+                        <td class="td-border-bottom-0">freediving@gmail.com</td>
+                        <td class="td-border-bottom-0">賴咚咚</td>
+                        <td class="td-border-bottom-0">全家餐</td>
+                        <td class="text-muted td-border-bottom-0">尚未付款</td>
+                        <td class="text-end td-border-bottom-0">666</td>
+                        <td class="pe-4 text-end td-border-bottom-0">
+                          <div class="btn-group">
+                            <a href="#" class="btn btn-outline-dark btn-sm">
+                              編輯<i class="ms-1 bi bi-pen"></i>
+                            </a>
+                            <div class="btn-group">
+                              <a class="btn btn-outline-dark btn-sm dropdown-toggle" href="#" role="button"
+                                id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                更多
+                              </a>
+
+                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">修改狀態</a></li>
+                                <li><a class="dropdown-item text-danger" href="#deleteModal" data-bs-toggle="modal"
+                                    data-bs-order-id="TX123456788">刪除訂單</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent">
+                <div class="dropdown">
+                  <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    出貨狀態管理
+                  </a>
+
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-3" id="card-invoice">
+              <div class="card-header">
+                發票管理
+              </div>
+              <form class="card-body needs-validation" novalidate>
+                <div class="row g-2">
+                  <div class="col-2">
+                    <label for="invoice-type"
+                      class="text-nowrap form-label d-flex h-100 align-items-center">發票類型</label>
+                  </div>
+                  <div class="col-10">
+                    <select class="form-select" id="invoice-type" aria-label="Default select example" required>
+                      <option value="1" selected>個人發票</option>
+                      <option value="2">營業人三聯式發票</option>
+                      <option value="3">捐贈發票</option>
+                    </select>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <label for="company-code"
+                      class="text-nowrap form-label d-flex h-100 align-items-center">統一編號</label>
+                  </div>
+                  <div class="col-10">
+                    <input type="number" id="company-code" class="form-control" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <label for="company" class="text-nowrap form-label d-flex h-100 align-items-center">公司名稱</label>
+                  </div>
+                  <div class="col-10">
+                    <input type="text" id="company" class="form-control" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                  </div>
+                  <div class="col d-flex flex-row-reverse">
+                    <input type="submit" value="更新資訊" class="btn btn-outline-secondary">
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="card mb-3" id="card-danger">
+              <div class="card-header">危險操作</div>
+              <div class="card-body">
+                <div class="row align-items-center mb-2 m">
+                  <div class="col-2">
+                    <button type="button" class="btn btn-outline-danger w-100">退款</button>
+                  </div>
+                  <div class="col">
+                    退還用戶款項
+                  </div>
+                </div>
+                <div class="row align-items-center mb-2">
+                  <div class="col-2">
+                    <button type="button" class="btn btn-outline-danger w-100">折讓</button>
+                  </div>
+                  <div class="col">
+                    針對已開立的訂單退回部分款項
+                  </div>
+                </div>
+                <div class="row align-items-center">
+                  <div class="col-2">
+                    <button type="button" class="btn btn-outline-danger w-100 text-nowrap">刪除訂單</button>
+                  </div>
+                  <div class="col">
+                    將訂單刪除，並移除相關訂單資訊
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
       </div>
     </main>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">刪除訂單</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>確認刪除編號「<span class="delete-text"></span>」的訂單嗎</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">關閉</button>
+          <button type="button" class="btn btn-danger">確認刪除</button>
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
   </script>
 
-  <script src="javascript/all.js"></script>
+  <script src="javascript/order.js"></script>
 </body>
 
 </html>
